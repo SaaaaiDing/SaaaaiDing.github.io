@@ -1,0 +1,63 @@
+name: Verify live website
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: live-website
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v6
+      - name: Verify the public homepage and deployed assets
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import time
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          from urllib.error import HTTPError
+
+          base = "https://saaaaiding.github.io"
+          research = json.loads(Path("_data/research.yaml").read_text())
+          assets = sorted(p for p in Path("static").iterdir() if p.is_file())
+
+          def fetch(path):
+              request = Request(base + path, headers={"User-Agent": "AcademicWebsiteDeploymentCheck/1.0", "Cache-Control": "no-cache"})
+              with urlopen(request, timeout=25) as response:
+                  assert response.status == 200
+                  assert response.url.startswith(base + "/")
+                  return response.read()
+
+          for attempt in range(1, 31):
+              try:
+                  html = fetch("/").decode("utf-8")
+                  assert "Saisai Ding" in html and "Ph.D. candidate in Food Science" in html
+                  assert "{{" not in html and "{%" not in html
+                  for area in research:
+                      assert area["title"] in html and ('id="' + area["id"] + '"') in html
+                  assert html.count('class="research-card"') == 3
+                  for asset in assets:
+                      actual = fetch("/" + asset.as_posix())
+                      assert hashlib.sha256(actual).digest() == hashlib.sha256(asset.read_bytes()).digest(), str(asset)
+                  try:
+                      fetch("/page-that-does-not-exist-deployment-check")
+                      raise AssertionError("Missing page should return HTTP 404")
+                  except HTTPError as error:
+                      assert error.code == 404
+                      assert "Page not found." in error.read().decode("utf-8")
+                  print("PASS: live homepage, three research areas, every static asset byte-for-byte, and custom HTTP 404.")
+                  print("Verified URL: " + base + "/")
+                  break
+              except Exception as error:
+                  print(f"Deployment check {attempt}/30: {type(error).__name__}: {error}", flush=True)
+                  if attempt == 30:
+                      raise
+                  time.sleep(15)
+          PY
