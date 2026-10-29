@@ -2,6 +2,8 @@
 
 Jekyll website for [saaaaiding.github.io](https://saaaaiding.github.io/), maintained in [SaaaaiDing/SaaaaiDing.github.io](https://github.com/SaaaaiDing/SaaaaiDing.github.io).
 
+For the current state and next-session instructions, read [Website maintenance and handoff](docs/WEBSITE_HANDOFF.md).
+
 ## Content
 
 - `_data/main_info.yaml`: introduction, affiliation, advisor, public contact links.
@@ -11,7 +13,7 @@ Jekyll website for [saaaaiding.github.io](https://saaaaiding.github.io/), mainta
 - `index.html` and `_layouts/default.html`: page structure.
 - `static/site.css`: responsive styling.
 - `static/research-*.svg`: original conceptual illustrations.
-- `static/saisai-ding.jpg`: the portrait previously used on the public website.
+- `static/saisai-ding.jpg`: the owner's supplied square LinkedIn headshot.
 
 Data files use JSON syntax, which is valid YAML and supported by Jekyll. Keep fields as plain text. Use `null` for unavailable URLs; the template hides those links.
 

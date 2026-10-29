@@ -11,6 +11,6 @@ Public sources verified for the 29 October 2026 revision:
 
 The owner's supplied biography establishes the current Ph.D. candidate designation and advisor relationship. The previous public website supplies the undergraduate institution, prior employers, and broad industry research background. Precise past job titles, private contact details, and unverified awards are omitted.
 
-The portrait is reused from the previous public website. Research diagrams are original conceptual illustrations. No local research figures, manuscripts, CV files, or unpublished code are included.
+The portrait was replaced on 29 October 2026 with the owner's explicitly supplied square LinkedIn headshot. The original local image was preserved. Research diagrams are original conceptual illustrations. No local research figures, manuscripts, CV files, or unpublished code are included.
 
 Local reference documents could not be accessed because workspace execution and file-writing tools failed. This revision relies on the owner's brief, the previous public website, and public sources. It does not claim to synthesize the inaccessible documents. Additional biographical or project details should be checked privately against those documents before a future update.
