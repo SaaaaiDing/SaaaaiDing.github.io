@@ -28,3 +28,4 @@ exclude:
   - "*.pdf"
   - "*.docx"
   - "*.slurm"
+theme: null
