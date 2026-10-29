@@ -1,0 +1,30 @@
+title: Saisai Ding
+description: Protein design, molecular simulation, and experimental protein research at Penn State.
+url: "https://saaaaiding.github.io"
+baseurl: ""
+lang: en
+markdown: kramdown
+strict_front_matter: true
+liquid:
+  error_mode: strict
+exclude:
+  - README.md
+  - docs
+  - scripts
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - package.json
+  - package-lock.json
+  - __deploy.sh
+  - __redirect.html
+  - assets
+  - libs
+  - _projects
+  - _website_2014
+  - reference
+  - references
+  - "*.pdf"
+  - "*.docx"
+  - "*.slurm"

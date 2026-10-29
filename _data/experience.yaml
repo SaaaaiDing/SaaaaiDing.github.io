@@ -1,22 +1,40 @@
-experiences:
-
-- place: "The Pennsylvania State University"
-  time: "2023 - now"
-  title: "Research Scientist"
-  subtitle: "Zhang Lab, Laboratory for alternative proteins,computational biology and bioinformatics"
-  category: "school"
-- place: "Joes Future Food"
-  time: "2021 - 2023"
-  title: "R&D Manager"
-  subtitle: "Creator of China's First Cultured Meat, Work on serum-free media development"
-  category: "work"
-- place: "GenScript"
-  time: "Summer 2021"
-  title: "Research Scientist, Intern"
-  subtitle: "gene synthesis"
-  category: "work"
-- place: "Jiangsu University of Science and Technology"
-  time: "2017 - 2021"
-  title: "B.Eng. Student"
-  subtitle: "Food Engineering <br/> First Class Honours"
-  category: "school"
+{
+  "experience": [
+    {
+      "period": "Current",
+      "title": "Doctoral research",
+      "place": "Penn State · Food Science",
+      "description": "Protein design, molecular simulation, and experimental protein research with Dr. Yi Zhang."
+    },
+    {
+      "period": "Prior experience",
+      "title": "Industry research",
+      "place": "Joes Future Food · GenScript",
+      "description": "Previous work in cultivated-meat research and serum-free media development, with internship experience in gene synthesis."
+    },
+    {
+      "period": "Education",
+      "title": "B.Eng. in Food Engineering",
+      "place": "Jiangsu University of Science and Technology",
+      "description": "An engineering foundation for research at the interface of proteins, computation, and food science."
+    }
+  ],
+  "skills": [
+    {
+      "title": "Model development",
+      "text": "Protein representations, generative modeling, and computational evaluation."
+    },
+    {
+      "title": "Molecular simulation",
+      "text": "Molecular dynamics and interpretation of protein structure and motion."
+    },
+    {
+      "title": "Research software",
+      "text": "Scientific programming and reproducible computational workflows."
+    },
+    {
+      "title": "Experimental direction",
+      "text": "Protein production and cell-based functional evaluation in ongoing research."
+    }
+  ]
+}

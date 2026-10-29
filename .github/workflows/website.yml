@@ -1,0 +1,77 @@
+name: Validate website
+on:
+  push:
+    branches: [master, website-refresh]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: website-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    outputs:
+      build_type: ${{ steps.pages.outputs.build_type }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: Read existing Pages configuration
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/$GITHUB_REPOSITORY/pages" > "$RUNNER_TEMP/pages.json"; then
+            jq '{build_type, source, html_url, status}' "$RUNNER_TEMP/pages.json"
+            echo "build_type=$(jq -r '.build_type' "$RUNNER_TEMP/pages.json")" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::Pages configuration could not be read. Check repository Settings > Pages."
+            echo "build_type=unknown" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Build with the GitHub Pages Jekyll environment
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Check rendered content and publication artifact
+        run: python3 scripts/check_site.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install headless browser checks
+        run: |
+          npm install --prefix "$RUNNER_TEMP/site-browser-check" playwright @axe-core/playwright
+          "$RUNNER_TEMP/site-browser-check/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Check responsive layout, navigation, and accessibility
+        env:
+          NODE_PATH: ${{ runner.temp }}/site-browser-check/node_modules
+        run: node scripts/check_browser.cjs
+      - name: Upload rendered-page screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-screenshots
+          path: screenshots/
+          if-no-files-found: ignore
+      - name: Upload validated site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site/
+  deploy:
+    if: github.ref == 'refs/heads/master' && needs.build.outputs.build_type == 'workflow'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish validated GitHub Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,5 +1,12 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+node_modules/
 .DS_Store
-*/.DS_Store
-.jekyll-cache
-_site/*
+screenshots/
+playwright-report/
+test-results/
 _snap_md5.txt

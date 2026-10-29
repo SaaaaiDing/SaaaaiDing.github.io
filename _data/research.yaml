@@ -1,0 +1,71 @@
+[
+  {
+    "id": "models",
+    "number": "01",
+    "title": "Model Design and Agentic Tool Development",
+    "tagline": "Learning from sequences, structures, and motion.",
+    "status": "Public method · ongoing tool development",
+    "summary": "I develop computational methods for protein design and explore agentic tools that help organize research workflows.",
+    "paragraphs": [
+      "With Dr. Yi Zhang, I developed ProChoreo, a framework that connects protein sequence representations with molecular dynamics-derived conformational ensembles through contrastive learning, then uses these representations for generative binder design. My contributions include methodology, software, and computational analysis.",
+      "ProChoreo is available as a public preprint with source code. Its reported evaluation is computational. Separate, ongoing work explores agentic assistance for coordinating protein-design research; this developing direction is presented here at a conceptual level."
+    ],
+    "figure": "/static/research-models.svg",
+    "figure_alt": "Conceptual diagram connecting sequence and conformational information to model development and computational evaluation.",
+    "caption": "Conceptual research overview. The diagram illustrates information flow, not a measured result or an unpublished agent architecture.",
+    "paper_url": "https://doi.org/10.64898/2026.01.23.701298",
+    "paper_label": "ProChoreo preprint",
+    "code_url": "https://github.com/SaaaaiDing/PD_NLP",
+    "code_label": "Public code",
+    "tags": [
+      "Generative modeling",
+      "Molecular representations",
+      "Research tools"
+    ]
+  },
+  {
+    "id": "enzymes",
+    "number": "02",
+    "title": "Enzyme Engineering",
+    "tagline": "Understanding motion to inform function.",
+    "status": "Published collaboration · continuing research",
+    "summary": "In collaboration with Han Liu (Liu Han), I investigate how enzyme structure and molecular motion relate to function.",
+    "paragraphs": [
+      "Our published collaborative study on a cold-active transglutaminase combines computational characterization with recombinant expression and activity measurements. Molecular simulation provides a way to examine flexibility and stability alongside experimental observations.",
+      "My research interests center on using simulation and structure–function analysis to inform engineering hypotheses. Future designs and experiments are distinct from completed analyses; unpublished collaborative studies are described here only in general terms."
+    ],
+    "figure": "/static/research-enzymes.svg",
+    "figure_alt": "Conceptual diagram connecting enzyme structure, molecular simulation, and structure–function interpretation.",
+    "caption": "Conceptual research overview. Abstract shapes represent structure and motion; no experimental data or unpublished structures are shown.",
+    "paper_url": "https://doi.org/10.1016/j.enzmictec.2025.110712",
+    "paper_label": "Published collaboration",
+    "code_url": null,
+    "tags": [
+      "Molecular dynamics",
+      "Structure–function analysis",
+      "Enzyme behavior"
+    ]
+  },
+  {
+    "id": "sweet-modulators",
+    "number": "03",
+    "title": "Sweet Modulator Discovery",
+    "tagline": "Connecting computational ideas with experimental questions.",
+    "status": "Ongoing research",
+    "summary": "I am exploring protein-based sweet modulators through computational design, agentic research tools, and experimental investigation.",
+    "paragraphs": [
+      "This direction aims to connect computational design with protein production and cellular evaluation, using experimental feedback to refine future designs. The broader experimental scope includes protein expression and purification, cell culture, transfection, and GPCR functional assays.",
+      "The workflow below is a conceptual research overview. It does not imply that every stage has been completed or that designed proteins have been experimentally validated."
+    ],
+    "figure": "/static/research-sweet.svg",
+    "figure_alt": "Computational design, then protein production, then cellular evaluation, then iterative refinement, with feedback to computational design.",
+    "caption": "Conceptual research overview. A planned iterative workflow, not a record of completed experiments.",
+    "paper_url": null,
+    "code_url": null,
+    "tags": [
+      "Computational protein design",
+      "Protein production",
+      "Cellular evaluation"
+    ]
+  }
+]

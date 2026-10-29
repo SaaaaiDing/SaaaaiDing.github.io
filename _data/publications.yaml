@@ -1,26 +1,32 @@
-papers:
-  - title: "Recent progress in magnetic nanoparticles and mesoporous materials for enzyme immobilization: an update"
-    authors: "<b>Ding Saisai</b>, Zhu J.P., Wang Y., Yu Y., Zhao Z."
-    venue: "Brazilian Journal of Biology, 82. 2021."
-    selected: y
-    
-  - title: "Immobilization of the extracellular recombinant Lucky9 xylanase from *Bacillus subtilis* enhances activity at high temperature and pH"
-    authors: "<b>Ding Saisai</b>, Zhu J.P., Wang Y., Wu B., Zhao Z."
-    venue: "FEBS Open bio, 10(12), pp.2733-2739. 2020."
-    selected: y
-    
-  - title: "The insecticidal activity of methyl benzoate against *Tribolium castaneum* by transcriptomic analysis and in-silico simulation"
-    authors: "Wang L., <b>Ding Saisai</b>, Zhang N.J., Lu Y., Geng X., Zhao Z."
-    venue: "Journal of Stored Products Research, 97, p.101972. 2022."
-    selected: y
-    
-  - title: "A segmentation method for adipocyte progenitor cells based on SUnet algorithm"
-    authors: "Zhou Guanghong, <b>Ding Saisai</b>, Ding Shijie, Wu Zhongyuan, Li Jiamin, Tang Changbo."
-    venue: "Jiangsu Province: CN114998360A, 2022-09-02."
-    selected: n
-    
-  - title: "A method for predicting the concentration of serum-free medium components"
-    authors: "Zhou Guanghong, <b>Ding Saisai</b>, Ding Shijie, Wu Zhongyuan, Li Jiamin, Tang Changbo."
-    venue: "Jiangsu Province: CN115101118A, 2022-09-23."
-    selected: n
-
+[
+  {
+    "year": "2026",
+    "title": "De novo design of protein binders targeting the human sweet taste receptor as potential sweet proteins",
+    "authors": "Saisai Ding and Yi Zhang",
+    "venue": "npj Science of Food",
+    "status": "Published online",
+    "note": "Computational design study; experimental receptor activation and sensory sweetness remain to be established.",
+    "paper_url": "https://doi.org/10.1038/s41538-026-01202-x",
+    "code_url": null
+  },
+  {
+    "year": "2026",
+    "title": "ProChoreo: de novo Binder Design from Conformational Ensembles with Generative Deep Learning",
+    "authors": "Saisai Ding and Yi Zhang",
+    "venue": "bioRxiv",
+    "status": "Preprint",
+    "note": "Public preprint and software for dynamics-informed binder design. Not presented here as a peer-reviewed journal article.",
+    "paper_url": "https://doi.org/10.64898/2026.01.23.701298",
+    "code_url": "https://github.com/SaaaaiDing/PD_NLP"
+  },
+  {
+    "year": "2025",
+    "title": "A new cold-active transglutaminase: Discovery, computational insights, and recombinant expression",
+    "authors": "Han Liu, Saisai Ding, Corinne Nardin, and Yi Zhang",
+    "venue": "Enzyme and Microbial Technology · 191, 110712",
+    "status": "Published",
+    "note": null,
+    "paper_url": "https://doi.org/10.1016/j.enzmictec.2025.110712",
+    "code_url": null
+  }
+]
